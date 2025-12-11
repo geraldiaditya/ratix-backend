@@ -1,0 +1,15 @@
+meta {
+  name: Get Movies (By Genre)
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/movies?category=Action
+  body: none
+  auth: none
+}
+
+params:query {
+  category: Action
+}

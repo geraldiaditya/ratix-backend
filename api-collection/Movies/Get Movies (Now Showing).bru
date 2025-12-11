@@ -1,0 +1,15 @@
+meta {
+  name: Get Movies (Now Showing)
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/movies?category=now_showing
+  body: none
+  auth: none
+}
+
+params:query {
+  category: now_showing
+}

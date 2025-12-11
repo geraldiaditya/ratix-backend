@@ -1,0 +1,15 @@
+meta {
+  name: Get User
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/users/get?id=1
+  body: none
+  auth: none
+}
+
+params:query {
+  id: 1
+}

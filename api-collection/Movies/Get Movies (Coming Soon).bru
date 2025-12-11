@@ -1,0 +1,15 @@
+meta {
+  name: Get Movies (Coming Soon)
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/movies?category=coming_soon
+  body: none
+  auth: none
+}
+
+params:query {
+  category: coming_soon
+}
