@@ -1,0 +1,15 @@
+meta {
+  name: Get My Tickets (History)
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/tickets?status=history
+  body: none
+  auth: none
+}
+
+params:query {
+  status: history
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Get My Tickets (Active)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/tickets?status=active
+  body: none
+  auth: none
+}
+
+params:query {
+  status: active
+}

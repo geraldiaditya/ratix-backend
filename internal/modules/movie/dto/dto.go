@@ -100,7 +100,7 @@ func ToMovieDetailResponse(m *domain.Movie) *MovieDetailResponse {
 	for i, s := range m.Showtimes {
 		showtimes[i] = ShowtimeResponse{
 			StartTime: s.StartTime.Format("15:04"),
-			Price:     s.Price,
+			Price:     s.Cinema.BasePrice,
 			Date:      s.StartTime.Format("2006-01-02"),
 		}
 	}

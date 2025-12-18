@@ -1,0 +1,15 @@
+meta {
+  name: Get Cinemas
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/cinemas?city=Jakarta
+  body: none
+  auth: none
+}
+
+params:query {
+  city: Jakarta
+}

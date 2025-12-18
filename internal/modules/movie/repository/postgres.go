@@ -26,7 +26,7 @@ func (r *PostgresMovieRepository) GetAll() ([]domain.Movie, error) {
 
 func (r *PostgresMovieRepository) GetByID(id int64) (*domain.Movie, error) {
 	var movie domain.Movie
-	if err := r.DB.Preload("Genres").Preload("Cast").Preload("Showtimes").First(&movie, id).Error; err != nil {
+	if err := r.DB.Preload("Genres").Preload("Cast").Preload("Showtimes.Cinema").First(&movie, id).Error; err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			return nil, fmt.Errorf("movie not found")
 		}

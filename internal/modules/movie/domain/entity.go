@@ -2,6 +2,8 @@ package domain
 
 import (
 	"time"
+
+	"github.com/geraldiaditya/ratix-backend/internal/modules/cinema/domain"
 )
 
 type Movie struct {
@@ -33,10 +35,11 @@ type CastMember struct {
 }
 
 type Showtime struct {
-	ID        int64     `gorm:"primaryKey" json:"id"`
-	MovieID   int64     `gorm:"not null" json:"movie_id"`
-	StartTime time.Time `gorm:"not null" json:"start_time"`
-	Price     float64   `gorm:"not null;type:decimal(10,2)" json:"price"`
+	ID        int64         `gorm:"primaryKey" json:"id"`
+	MovieID   int64         `gorm:"not null" json:"movie_id"`
+	CinemaID  int64         `gorm:"not null;default:1" json:"cinema_id"` // Default 1 for migration safety
+	Cinema    domain.Cinema `gorm:"foreignKey:CinemaID" json:"cinema"`
+	StartTime time.Time     `gorm:"not null" json:"start_time"`
 }
 
 type MovieRepository interface {
