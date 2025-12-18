@@ -27,5 +27,6 @@ type Ticket struct {
 type TicketRepository interface {
 	GetByUserID(userID int64, status string) ([]Ticket, error)
 	GetByID(id int64) (*Ticket, error)
+	GetBookedSeats(showtimeID int64) ([]string, error)
 	Create(ticket *Ticket) error
 }
